@@ -2,6 +2,8 @@
 
 ### 一、常用 git 命令行
 
+#### 项目创建相关
+
 - 克隆一个已经创建的远程项目
 
 ```
@@ -61,11 +63,38 @@ git checkout branch_name
 git branch -d mas-git-learn
 ```
 
-- 基于远程分支创建新的可追溯的分支
+- 基于远程分支创建新的可追溯的分支，新建的分支相当于是远程分支一个备份
 
 ```
 git branch new_branch_name remote_branch_name
 ```
+
+#### 本地修改与提交
+
+- 查看本地状态
+
+```
+git status
+```
+- 查看本地文件变更
+
+```
+git diff
+```
+
+- 把本地提交修改添加到提交中
+
+```
+git add .
+git add home/index.html
+```
+
+- 提交本地修改，附加消息提交
+
+```
+git commit -m 'update readme'
+```
+
 
 
 
