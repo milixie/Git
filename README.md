@@ -61,6 +61,12 @@ git checkout branch_name
 git branch -d mas-git-learn
 ```
 
+- 基于远程分支创建新的可追溯的分支
+
+```
+git branch new_branch_name remote_branch_name
+```
+
 
 
 
