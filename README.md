@@ -95,6 +95,24 @@ git add home/index.html
 git commit -m 'update readme'
 ```
 
+- 将添加到提交中还原成未提交状态
+
+```
+git reset .
+git reset home/index.html
+```
+
+- 将本地修改的文件重置成没有修改的
+
+```
+git stash
+```
+- stash后再次还原修改后的内容
+```
+git stash pop
+```
+
+
 
 
 
