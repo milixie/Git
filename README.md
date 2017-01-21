@@ -143,10 +143,16 @@ git branch new_branch_name remote_branch_name
 ```
 git status
 ```
-- 查看本地文件变更
+- 查看本地文件（未 commit 的文件）变更
 
 ```
 git diff
+```
+
+- 查看本地所有文件（包括已经 commit 的但是还没推送到线上的文件）与线上文件的不同
+
+```
+git diff HEAD -- README.md
 ```
 
 - 把本地提交修改添加到提交中
@@ -207,6 +213,7 @@ git stash
 ```
 git checkout . (放弃所有文件)
 git checkout HEAD fila_name (放弃某个文件)
+git checkout -- fila_name (放弃某个文件)
 ```
 
 - stash后再次还原修改后的内容（暂存到本地）
@@ -291,9 +298,15 @@ git push origin:mas-new-branch   (试了这个不行)
 
 #### 合并与重置
 
-将本地的某个分支合并到当前分支中：
+- 将本地的某个分支合并到当前分支中：
 ```
 git merge mas-new-branch
+```
+
+- 重置已经提交的文件，比如说你有一个文件已经提交了，但是想重置掉
+
+```
+git revert commit_id
 ```
  
 
