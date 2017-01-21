@@ -43,11 +43,11 @@ $ git config --global user.email "email@example.com"
 
 git 有三种状态： 已提交`committed`，已修改`modified`，已暂存`staged`
 
-- 已提交 `committed`: 表示数据已经安全的保存到本地的数据库中
+- 已提交 `committed`: 表示数据已经安全的保存到本地的数据库中，执行 `git commit -m 'msg'`后就是提交状态
 
-- 已修改 `modified`: 已经修改，但是还没有保存到数据库
+- 已修改 `modified`: 已经修改，但是还没有保存到数据库，对本地文件修改
 
-- 已暂存 `staged`: 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中
+- 已暂存 `staged`: 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中，执行`git add file` 后就暂存了
 
 git 工作流：
 
@@ -57,6 +57,7 @@ git 工作流：
 
 - 提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。
 
+![http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0](http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0)
 
 ### 常用 git 命令行
 
@@ -166,7 +167,8 @@ git reset home/index.html
 ```
 git reset --hard HARD
 ```
-- 将提交的文件回退到上一个版本
+
+- 将提交的文件回退到当前的版本
 
 ```
 git reset --hard HARD^
@@ -177,9 +179,15 @@ git reset --hard HARD^
 ```
 git reset --hard 'commit id'/'hash'
 git reset --hard d75126c2a57c58f69ad77255b25c4edc9b98c5ef
-git reset --hard 
+git reset --hard 73057a8
 ```
 
+- 将回退后的版本再更新到最新的，可以先使用一个命令查看你的每一次命令，找到最新的 commit id
+
+```
+git reflog
+git reset --hard 'commit id'
+```
 
 - 将本地修改的文件重置成没有修改的，但是会暂存到本地
 
