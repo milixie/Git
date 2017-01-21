@@ -171,6 +171,12 @@ git stash
 git stash pop
 ```
 
+- 将 stash 后暂存到本地的数据清除掉
+
+```
+git stash clear
+```
+
 #### 搜索相关
 
 - 搜索某个单词(在某个版本)
