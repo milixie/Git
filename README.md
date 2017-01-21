@@ -223,7 +223,6 @@ git stash
 git stash list
 ```
 
-
 - 放弃本地文件的修改，不会暂存到本地
 
 ```
@@ -234,7 +233,9 @@ git checkout -- fila_name (放弃某个文件)
 
 - stash后再次还原修改后的内容（暂存到本地）
 ```
-git stash pop
+git stash pop (内容恢复后，stash内容会删除)
+git stash apply (内容恢复后，stash 内容不会删除)
+git stash drop (可以把stash 在某个地方的内容删掉)
 ```
 
 - 将 stash 后暂存到本地的数据清除掉
