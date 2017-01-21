@@ -308,6 +308,21 @@ git merge mas-new-branch
 ```
 git revert commit_id
 ```
+
+#### 删除文件
+
+```
+rm text.txt
+git add text.txt
+git commit -m 'delete'
+git push 
+```
+或
+```
+git rm text.txt
+git commit -m  'delete'
+git push 
+```
  
 
 
