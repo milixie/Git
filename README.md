@@ -161,6 +161,12 @@ git reset .
 git reset home/index.html
 ```
 
+- 将修改的文件回退到上一个版本
+
+```
+git reset --hard HARD
+```
+
 - 将本地修改的文件重置成没有修改的，但是会暂存到本地
 
 ```
