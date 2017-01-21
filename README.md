@@ -201,6 +201,14 @@ git reset --hard 'commit id'
 ```
 git stash
 ```
+
+- 放弃本地文件的修改，不会暂存到本地
+
+```
+git checkout . (放弃所有文件)
+git checkout HEAD fila_name (放弃某个文件)
+```
+
 - stash后再次还原修改后的内容（暂存到本地）
 ```
 git stash pop
@@ -240,6 +248,56 @@ git blame README.md (显示 某个作者、在什么时间修改了这个文件�
 ```
 git remote -v
 ```
+
+- 显示远程端的具体信息
+
+```
+git remote show origin 
+```
+
+- 添加新的远程端
+
+```
+git remote add mili git@github.com:milixie/forestry.git
+```
+- 下载远程端版本，并自动与HEAD版本合并：
+```
+git remote pull remote_name url
+```
+
+- 从远程端拉取最新的代码，但是不合并到本地
+```
+git fetch 
+git fetch remote_name
+```
+
+- 从远程端拉取最新的代码，并且合并到本地
+
+```
+git pull origin master
+```
+- 将本地版本发布到远程端
+
+```
+git push 
+git push origin master
+```
+- 删除远程端分支
+
+```
+git push origin --delete mas-new-branch
+git push origin:mas-new-branch   (试了这个不行)
+```
+
+#### 合并与重置
+
+将本地的某个分支合并到当前分支中：
+```
+git merge mas-new-branch
+```
+ 
+
+
 
 
 
