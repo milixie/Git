@@ -39,7 +39,21 @@ sudo apt-get install git  //ubuntu、debian等
 sudo yum install git  //redHat等
 ```
 
-- 安装 git 后需要自报家门，设置自己的相关信息，包括 name 和 email
+
+#### 远程仓库
+Github 网站提供 git 仓库托管服务的，本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+```
+ssh-keygen -t rsa -C "youremail@example.com"
+```
+
+查看 id_rsa.pub
+```
+cat ~/.ssh/id_rsa.pub
+```
+把里面的密钥粘贴到 github 里面的 ssh-key 里面
+
+
+- 安装 git 后需要自报家门，设置自己的相关信息，包括 name 和 email，这样才能把自己的代码推送到远程 git 仓库
 
 ```
 $ git config --global user.name "Your Name"
@@ -302,6 +316,8 @@ git push origin:mas-new-branch   (试了这个不行)
 ```
 git merge mas-new-branch
 ```
+- 解决冲突
+
 
 - 重置已经提交的文件，比如说你有一个文件已经提交了，但是想重置掉
 
