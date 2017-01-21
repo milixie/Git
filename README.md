@@ -220,7 +220,9 @@ git reset --hard 'commit id'
 
 ```
 git stash
+git stash list
 ```
+
 
 - 放弃本地文件的修改，不会暂存到本地
 
@@ -318,6 +320,26 @@ git merge mas-new-branch
 ```
 - 解决冲突
 
+```
+<<<<<<< HEAD
+本地文件冲突内容
+=======
+合并的文件冲突内容
+>>>>>>> feature1
+```
+- 查看解决冲突的合并情况
+
+```
+git log --graph --pretty=oneline --abbrev-commit
+git log --graph
+```
+- 合并时候提交 commit 内容，合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并
+
+```
+git merge --no-ff -m "merge with no-ff" dev
+```
+
+![合并图](http://www.liaoxuefeng.com/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0)
 
 - 重置已经提交的文件，比如说你有一个文件已经提交了，但是想重置掉
 
