@@ -166,6 +166,20 @@ git reset home/index.html
 ```
 git reset --hard HARD
 ```
+- 将提交的文件回退到上一个版本
+
+```
+git reset --hard HARD^
+```
+
+- 将内容回退到某个之前的版本
+
+```
+git reset --hard 'commit id'/'hash'
+git reset --hard d75126c2a57c58f69ad77255b25c4edc9b98c5ef
+git reset --hard 
+```
+
 
 - 将本地修改的文件重置成没有修改的，但是会暂存到本地
 
