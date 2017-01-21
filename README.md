@@ -30,7 +30,14 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 
 ### Git 安装 and 设置用户
 
-- 可以直接去 git 官网去下载：https://git-scm.com/ ，里面有一些图形化的git界面操作工具，可以直接使用 git Bash 去操作命令行 git
+- 可以直接去 git 官网去下载：[https://git-scm.com/](https://git-scm.com/) ，里面有一些图形化的git界面操作工具，可以直接使用 git Bash 去操作命令行 git
+
+- linux 系统中可以使用命令行直接安装
+
+```
+sudo apt-get install git  //ubuntu、debian等
+sudo yum install git  //redHat等
+```
 
 - 安装 git 后需要自报家门，设置自己的相关信息，包括 name 和 email
 
@@ -224,6 +231,14 @@ git log --pretty=oneline (仅显示提交的 commit id 和 message)
 git log --author="milixie" (查看本作者提交记录)
 git log -p README.md (显示某个文件的所有修改)
 git blame README.md (显示 某个作者、在什么时间修改了这个文件的具体内容)
+```
+
+#### 更新与发布
+
+- 列出当前配置的远程端
+
+```
+git remote -v
 ```
 
 
