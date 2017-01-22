@@ -400,11 +400,22 @@ git push
 ```
 git tag
 ```
-- 新建标签
+- 打标签
 
 ```
 git tag -a v0.0.1 -m 'version0.0.1'
 ```
+- 显示标签详细信息
+
+```
+git show v0.0.1
+```
+- 把标签推送到远程，成为了共享标签
+```
+git push origin v0.0.1
+git push origin --tags (所有标签)
+```
+
  
 
 
@@ -419,11 +430,25 @@ git tag -a v0.0.1 -m 'version0.0.1'
 
 
 
-## 二、命令行简写的设置
+## 二、Git别名的设置
 
 - 查看配置信息
 ```
 git config --list
+```
+- 给一些配置设置别名
+```
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+```
+访问的时候直接可以使用简称，这样节省时间
+```
+git co / gco
+git br / gbr
+git ci / gci
+git st / gst
 ```
 
 
