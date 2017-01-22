@@ -284,6 +284,12 @@ git blame README.md (显示 某个作者、在什么时间修改了这个文件�
 git remote -v
 ```
 
+- 重命名远程仓库的名称
+
+```
+git remote rename up(旧名称) upstream(新名称)
+```
+
 - 显示远程端的具体信息
 
 ```
@@ -295,6 +301,13 @@ git remote show origin
 ```
 git remote add mili git@github.com:milixie/forestry.git
 ```
+
+- 移除一个本地仓库
+
+```
+git remote rm up
+```
+
 - 下载远程端版本，并自动与HEAD版本合并：
 ```
 git remote pull remote_name url
