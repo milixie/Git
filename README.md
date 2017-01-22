@@ -355,7 +355,11 @@ git push origin --delete mas-new-branch
 git push origin:mas-new-branch   (试了这个不行)
 ```
 
-### 合并与重置
+### 合并、变基与重置
+
+整合来自不同分支的修改主要有两种方法：merge合并 以及 rebase变基
+
+#### 合并
 
 - 将本地的某个分支合并到当前分支中：
 ```
@@ -385,6 +389,27 @@ git merge --no-ff -m "merge with no-ff" dev
 ```
 
 ![合并图](http://www.liaoxuefeng.com/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0)
+
+#### 变基
+
+在某一个子分支上 rebase 它的父分支，那么将会在父分支上把本子分支的 commit 重演一遍，如果子分支上提交的 commit 比较多，那么可能会出现比较多的冲突，变基操作的实质是丢弃一些现有的提交，然后相应地新建一些内容一样但实际上不同的提交，rebase 命令重新整理了提交并再次推送，所以如果别人会基于一个分支去拉取代码进行开发，最好不要在该分支上进行 rebase 操作
+
+```
+git rebase origin/master
+```
+- 在 rebase 过程中一个 commit 成功后转到下一个 commit 的时候使用
+```
+git rebase --continue
+```
+- 在 rebase 过程中如果想退出
+
+```
+git rebase --abort
+```
+
+- rebase 完成后，使用 `git push` 后会不成功，需要强推才会成功，但是要注意，如果这个分支别其他伙伴正在上面修改内容，这个他在推送他的提交的时候可能会出问题，所以如果这个分支只有自己在用的话，可以 rebase 也可以强推，但是如果和别人合作的话最好不要使用 rebase，而要使用 merge
+
+![变基图例](https://git-scm.com/book/en/v2/images/interesting-rebase-4.png)
 
 - 重置已经提交的文件，比如说你有一个文件已经提交了，但是想重置掉
 
