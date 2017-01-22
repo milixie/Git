@@ -6,7 +6,7 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 
 ### 集中式 vs 分布式
 
-集中式版本控制系统：CVS/SVN
+#### 集中式版本控制系统：CVS/SVN
 
 特点：
 
@@ -16,9 +16,7 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 
 - 不安全，如果中央服务器出问题了，所有人都没办法工作了
 
-- 强大的分支管理
-
-分布式版本控制系统：Git
+#### 分布式版本控制系统：Git
 
 特点：
 
@@ -27,6 +25,10 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 - 不需要联网就可以就可以干活儿
 
 - 安全性高，每个人的电脑都是一个版本库，每次从远程 clone 代码仓库的时候都是把对代码库的完整备份，如果一个人的电脑坏掉或者代码污染了，都可以直接 copy 一份其他人的代码，或者使用版本管理找到之前的代码
+
+- 强大的分支管理
+
+- git 每次提交保存的都是一系列不同时刻的文件快照
 
 ## Git 安装 and 设置用户
 
@@ -38,7 +40,6 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 sudo apt-get install git  //ubuntu、debian等
 sudo yum install git  //redHat等
 ```
-
 
 ### 远程仓库
 Github 网站提供 git 仓库托管服务的，本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
@@ -109,6 +110,8 @@ rm -rf .git
 
 ### 分支相关
 
+** git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作
+
 - 创建并切换新分支
 
 ```
@@ -136,6 +139,17 @@ git branch -r
 1.可以先查看远程分支，再直接`git checkout mas-git-learn`
 2.也可以先新建一个同名的分支`git checkout -b mas-git-learn`， 然后 `pull` 一下远程的分支`git pull origin mas-git-learn`
 3.可以这样：`git checkout -b dev origin/dev`
+
+- 查看每一个分支的最后一次提交
+
+```
+git branch -v
+```
+- 查看合并分支/未合并分支
+```
+git branch --merged
+git branch --no-merged
+```
 
 - 切换分支
 
@@ -268,6 +282,7 @@ git grep html v0.01
 git log
 git log --oneline (仅显示提交的 hash 和 message)
 git log --pretty=oneline (仅显示提交的 commit id 和 message)
+git log --oneline --decorate --graph --all (输出你的提交历史、各个分支的指向以及项目的分支分叉情况)
 git log --author="milixie" (查看本作者提交记录)
 git log -p (显示所有提交的文件的具体修改)
 git log -p README.md (显示某个文件的所有修改)
@@ -313,7 +328,7 @@ git remote rm up
 git remote pull remote_name url
 ```
 
-- 从远程端拉取最新的代码，但是不合并到本地
+- 从远程端拉取最新的代码，也就是从服务器上抓取本地没有的数据，它并不会修改工作目录中的内容，它只会获取数据然后让你自己合并
 ```
 git fetch 
 git fetch remote_name
@@ -322,7 +337,10 @@ git fetch remote_name
 - 从远程端拉取最新的代码，并且合并到本地
 
 ```
-git pull origin master
+git pull
+这个命令相当于：
+git fetch 
+git merge branch_name
 ```
 - 将本地版本发布到远程端
 
@@ -352,6 +370,8 @@ git merge mas-new-branch
 合并的文件冲突内容
 >>>>>>> feature1
 ```
+这里 HEAD 表示当前分支的内容，后面的表示合并文件中冲突的内容，可以选择性的留下其中一个，也可以手动合并其中的内容
+
 - 查看解决冲突的合并情况
 
 ```
