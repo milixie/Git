@@ -1,10 +1,10 @@
 # Git
 
-### Git是什么
+## Git是什么
 
 git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 修改了什么内容，查看特定版本修订情况的系统
 
-#### 集中式 vs 分布式
+### 集中式 vs 分布式
 
 集中式版本控制系统：CVS/SVN
 
@@ -28,7 +28,7 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 
 - 安全性高，每个人的电脑都是一个版本库，每次从远程 clone 代码仓库的时候都是把对代码库的完整备份，如果一个人的电脑坏掉或者代码污染了，都可以直接 copy 一份其他人的代码，或者使用版本管理找到之前的代码
 
-### Git 安装 and 设置用户
+## Git 安装 and 设置用户
 
 - 可以直接去 git 官网去下载：[https://git-scm.com/](https://git-scm.com/) ，里面有一些图形化的git界面操作工具，可以直接使用 git Bash 去操作命令行 git
 
@@ -40,7 +40,7 @@ sudo yum install git  //redHat等
 ```
 
 
-#### 远程仓库
+### 远程仓库
 Github 网站提供 git 仓库托管服务的，本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
 ```
 ssh-keygen -t rsa -C "youremail@example.com"
@@ -60,7 +60,7 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 
 ```
-### Git 的状态以及工作流
+## Git 的状态以及工作流
 
 git 有三种状态： 已提交`committed`，已修改`modified`，已暂存`staged`
 
@@ -83,9 +83,9 @@ git 工作流：
 使用git时文件的生命周期
 ![https://git-scm.com/book/en/v2/images/lifecycle.png](https://git-scm.com/book/en/v2/images/lifecycle.png)
 
-### 常用 git 命令行
+## 常用 git 命令行
 
-#### 项目创建相关
+### 项目创建相关
 
 - 克隆一个已经创建的远程项目
 
@@ -107,7 +107,7 @@ git init
 rm -rf .git
 ```
 
-#### 分支相关
+### 分支相关
 
 - 创建并切换新分支
 
@@ -156,7 +156,7 @@ git branch -D mas-git-learn （强行删除分支）
 git branch new_branch_name remote_branch_name
 ```
 
-#### 本地修改与提交
+### 本地修改与提交
 
 - 查看本地状态
 
@@ -252,7 +252,7 @@ git stash drop (可以把stash 在某个地方的内容删掉)
 git stash clear
 ```
 
-#### 搜索相关
+### 搜索相关
 
 - 搜索某个单词(在某个版本)
 ```
@@ -260,7 +260,7 @@ git grep html
 git grep html v0.01
 ```
 
-#### 提交历史相关
+### 提交历史相关
 
 - 查看提交历史记录
 
@@ -276,7 +276,7 @@ git log --stat (所有提交的简略的统计信息)
 git blame README.md (显示 某个作者、在什么时间修改了这个文件的具体内容)
 ```
 
-#### 更新与发布
+### 更新与发布
 
 - 列出当前配置的远程端
 
@@ -324,7 +324,7 @@ git push origin --delete mas-new-branch
 git push origin:mas-new-branch   (试了这个不行)
 ```
 
-#### 合并与重置
+### 合并与重置
 
 - 将本地的某个分支合并到当前分支中：
 ```
@@ -359,13 +359,13 @@ git merge --no-ff -m "merge with no-ff" dev
 git revert commit_id
 ```
 
-#### 移动文件
+### 移动文件
 
 ```
 git mv file_name file_to
 ```
 
-#### 删除文件
+### 删除文件
 
 ```
 rm text.txt
@@ -393,7 +393,7 @@ git push
 
 
 
-### 二、命令行简写的设置
+## 二、命令行简写的设置
 
 - 查看配置信息
 ```
@@ -401,4 +401,4 @@ git config --list
 ```
 
 
-### 三、
+## 三、
