@@ -346,7 +346,7 @@ git merge branch_name
 
 ```
 git push 
-git push origin master
+git push origin master 
 ```
 - 删除远程端分支
 
