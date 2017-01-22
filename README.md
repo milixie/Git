@@ -450,7 +450,7 @@ git push origin --tags (所有标签)
 
 
 
-## 二、Git别名的设置
+## Git别名的设置
 
 - 查看配置信息
 ```
@@ -467,9 +467,9 @@ $ git config --global alias.st status
 ```
 git co / gco
 git br / gbr
-git ci / gci
+git ci 
 git st / gst
 ```
 
 
-## 三、
+## 
