@@ -392,6 +392,19 @@ git rm text.txt
 git commit -m  'delete'
 git push 
 ```
+
+## 标签相关
+
+- 查看标签
+
+```
+git tag
+```
+- 新建标签
+
+```
+git tag -a v0.0.1 -m 'version0.0.1'
+```
  
 
 
