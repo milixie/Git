@@ -80,6 +80,9 @@ git 工作流：
 
 ![http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0](http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0)
 
+使用git时文件的生命周期
+![https://git-scm.com/book/en/v2/images/lifecycle.png](https://git-scm.com/book/en/v2/images/lifecycle.png)
+
 ### 常用 git 命令行
 
 #### 项目创建相关
@@ -88,6 +91,7 @@ git 工作流：
 
 ```
 git clone git@github.com:milixie/Git.git
+git clone git@github.com:milixie/Git.git new_name (把仓库名称变更为new_name)
 ```
 
 - 把一个目录变成使用 git 管理的本地仓库
@@ -131,6 +135,7 @@ git branch -r
 想要拉取远程分支的话
 1.可以先查看远程分支，再直接`git checkout mas-git-learn`
 2.也可以先新建一个同名的分支`git checkout -b mas-git-learn`， 然后 `pull` 一下远程的分支`git pull origin mas-git-learn`
+3.可以这样：`git checkout -b dev origin/dev`
 
 - 切换分支
 
@@ -142,6 +147,7 @@ git checkout branch_name
 
 ```
 git branch -d mas-git-learn
+git branch -D mas-git-learn （强行删除分支）
 ```
 
 - 基于远程分支创建新的可追溯的分支，新建的分支相当于是远程分支一个备份
@@ -157,10 +163,12 @@ git branch new_branch_name remote_branch_name
 ```
 git status
 ```
-- 查看本地文件（未 commit 的文件）变更
+- 查看本地文件变更
 
 ```
-git diff
+git diff  （未 commit 的文件）
+git diff --staged (已经提交的文件)
+git diff --cached (已经提交的文件)
 ```
 
 - 查看本地所有文件（包括已经 commit 的但是还没推送到线上的文件）与线上文件的不同
@@ -377,6 +385,11 @@ git push
 
 
 ### 二、命令行简写的设置
+
+- 查看配置信息
+```
+git config --list
+```
 
 
 ### 三、
