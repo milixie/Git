@@ -269,7 +269,10 @@ git log
 git log --oneline (仅显示提交的 hash 和 message)
 git log --pretty=oneline (仅显示提交的 commit id 和 message)
 git log --author="milixie" (查看本作者提交记录)
+git log -p (显示所有提交的文件的具体修改)
 git log -p README.md (显示某个文件的所有修改)
+git log -p -2 (加参数-2表示显示最近两次提交)
+git log --stat (所有提交的简略的统计信息)
 git blame README.md (显示 某个作者、在什么时间修改了这个文件的具体内容)
 ```
 
@@ -354,6 +357,12 @@ git merge --no-ff -m "merge with no-ff" dev
 
 ```
 git revert commit_id
+```
+
+#### 移动文件
+
+```
+git mv file_name file_to
 ```
 
 #### 删除文件
