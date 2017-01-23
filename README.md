@@ -188,20 +188,20 @@ git diff --staged (暂存区)
 git diff --cached (暂存区)
 ```
 
-- 查看本地所有文件（包括已经 commit 的但是还没推送到远程的文件）与远程文件的不同
+- 查看本地所有文件（包括已经存在暂存区的但是还没commit的文件）与commit的不同
 
 ```
 git diff HEAD -- README.md
 ```
 
-- 把本地提交修改添加到提交中
+- 把本地提交修改添加到暂存区中
 
 ```
 git add .
 git add home/index.html
 ```
 
-- 提交本地修改，附加消息提交
+- 提交暂存区文件，附加消息提交
 
 ```
 git commit -m 'update readme'
