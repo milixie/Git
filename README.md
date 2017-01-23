@@ -51,8 +51,7 @@ ssh-keygen -t rsa -C "youremail@example.com"
 ```
 cat ~/.ssh/id_rsa.pub
 ```
-把里面的密钥粘贴到 github 里面的 ssh-key 里面
-
+把里面的内容粘贴到 github 里面的 ssh-key 里面
 
 - 安装 git 后需要自报家门，设置自己的相关信息，包括 name 和 email，这样才能把自己的代码推送到远程 git 仓库
 
@@ -189,7 +188,7 @@ git diff --staged (已经提交的文件)
 git diff --cached (已经提交的文件)
 ```
 
-- 查看本地所有文件（包括已经 commit 的但是还没推送到线上的文件）与线上文件的不同
+- 查看本地所有文件（包括已经 commit 的但是还没推送到远程的文件）与远程文件的不同
 
 ```
 git diff HEAD -- README.md
@@ -208,7 +207,7 @@ git add home/index.html
 git commit -m 'update readme'
 ```
 
-- 将添加到提交中还原成未提交状态
+- 将暂存状态中的文件还原成修改状态的文件
 
 ```
 git reset .
