@@ -3,4 +3,6 @@
   function getName () {
   	console.log(111);
   }
+
+  getName();
 })()
