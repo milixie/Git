@@ -183,9 +183,9 @@ git status
 - 查看本地文件变更
 
 ```
-git diff  （未 commit 的文件）
-git diff --staged (已经提交的文件)
-git diff --cached (已经提交的文件)
+git diff  （modified）
+git diff --staged (暂存区)
+git diff --cached (暂存区)
 ```
 
 - 查看本地所有文件（包括已经 commit 的但是还没推送到远程的文件）与远程文件的不同
