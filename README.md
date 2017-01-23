@@ -26,15 +26,19 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 
 - 不需要联网就可以干活儿
 
-- 安全性高，每个人的电脑都是一个版本库，每次从远程 clone 代码仓库的时候都是把对代码库的完整备份，每次提交保存的都是一系列不同时刻的文件快照,如果一个人的电脑坏掉或者代码污染了，都可以直接 copy 一份其他人的代码，或者使用版本管理找到之前的代码
+- 安全性高，每个人的电脑都是一个版本库，每次从远程 clone 代码仓库的时候都是把对代码库的完整备份，每次提交保存的都是一系列不同时刻的文件快照，如果一个人的电脑坏掉或者代码污染了，都可以直接 copy 一份其他人的代码，或者使用版本管理找到之前的代码
 
 - 强大的分支管理
 
 ![http://www.liaoxuefeng.com/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0](http://www.liaoxuefeng.com/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0)
 
+=============
+
 ## Git 安装 and 设置用户
 
-- 可以直接去 git 官网去下载：[https://git-scm.com/](https://git-scm.com/) ，里面有一些图形化的git界面操作工具，可以直接使用 git Bash 去操作命令行 git
+- 可以直接去 git 官网去下载：[https://git-scm.com/](https://git-scm.com/) 
+
+- 可以直接使用 git Bash 去操作命令行 git，也可以下载类似于 sourceTree 这样的图形化 git 操作界面去操作
 
 - linux 系统中可以使用命令行直接安装
 
@@ -62,17 +66,22 @@ $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 
 ```
-## Git 的状态以及工作流
 
-git 有三种状态： 已提交`committed`，已修改`modified`，已暂存`staged`
+=============
+
+## Git 的状态、工作流以及文件的生命周期
+
+#### git 有三种状态： 
+
+已提交`committed`，已修改`modified`，已暂存`staged`
 
 - 已提交 `committed`: 表示数据已经安全的保存到本地的数据库中，执行 `git commit -m 'msg'`后就是提交状态
 
 - 已修改 `modified`: 已经修改，但是还没有保存到数据库，对本地文件修改
 
-- 已暂存 `staged`: 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中，执行`git add file` 后就暂存了
+- 已暂存 `staged`: 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中，在暂存区域，执行`git add file` 后就暂存了
 
-git 工作流：
+#### git 工作流：
 
 - 在工作目录中修改文件。
 
@@ -82,7 +91,7 @@ git 工作流：
 
 ![http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0](http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0)
 
-使用git时文件的生命周期
+#### 使用git时文件的生命周期
 
 ![https://git-scm.com/book/en/v2/images/lifecycle.png](https://git-scm.com/book/en/v2/images/lifecycle.png)
 
@@ -112,7 +121,7 @@ rm -rf .git
 
 ### 分支相关
 
-** git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作 **
+* git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作 *
 
 - 创建并切换新分支
 
@@ -478,7 +487,7 @@ git push origin --tags (所有标签)
 
 
 
-
+=============
 
 ## Git别名的设置
 
@@ -501,6 +510,7 @@ git ci
 git st / gst
 ```
 
+=============
 
 ## Git多人协作时应该注意的问题：
 
