@@ -82,6 +82,7 @@ git 工作流：
 ![http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0](http://www.liaoxuefeng.com/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0)
 
 使用git时文件的生命周期
+
 ![https://git-scm.com/book/en/v2/images/lifecycle.png](https://git-scm.com/book/en/v2/images/lifecycle.png)
 
 ## 常用 git 命令行
@@ -110,7 +111,7 @@ rm -rf .git
 
 ### 分支相关
 
-** git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作
+** git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作 **
 
 - 创建并切换新分支
 
@@ -136,8 +137,11 @@ git branch
 git branch -r
 ```
 想要拉取远程分支的话
+
 1.可以先查看远程分支，再直接`git checkout mas-git-learn`
+
 2.也可以先新建一个同名的分支`git checkout -b mas-git-learn`， 然后 `pull` 一下远程的分支`git pull origin mas-git-learn`
+
 3.可以这样：`git checkout -b dev origin/dev`
 
 - 查看每一个分支的最后一次提交
