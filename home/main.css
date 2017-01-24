@@ -3,13 +3,13 @@
   margin: 20px 0;
   scroll: auto;
   background: blue;
-  color: blue;
+  color: red;
   height: auto;
 }
 .home {
   height: auto;
   scroll: auto;
-  with: 25%;
+  with: 15%;
   padding: 10px;
   background: blue;
 }
