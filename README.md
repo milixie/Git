@@ -28,7 +28,7 @@ git 是一个分布式版本控制系统，可以查看 谁 在哪个时间段 �
 
 - 安全性高，每个人的电脑都是一个版本库，每次从远程 clone 代码仓库的时候都是把对代码库的完整备份，每次提交保存的都是一系列不同时刻的文件快照，如果一个人的电脑坏掉或者代码污染了，都可以直接 copy 一份其他人的代码，或者使用版本管理找到之前的代码
 
-- 强大的分支管理
+- 强大的分支管理(允许成千上万个并行开发的分支)
 
 ![http://www.liaoxuefeng.com/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0](http://www.liaoxuefeng.com/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0)
 
@@ -48,6 +48,7 @@ sudo yum install git  //redHat等
 ```
 
 ### 远程仓库
+可以自己搭建，也可以使用像 github 这样的提供 git 仓库托管服务的远程仓库。
 Github 网站提供 git 仓库托管服务的，本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
 ```
 ssh-keygen -t rsa -C "youremail@example.com"
@@ -59,7 +60,7 @@ cat ~/.ssh/id_rsa.pub
 ```
 把里面的内容粘贴到 github 里面的 ssh-key 里面
 
-- 安装 git 后需要自报家门，设置自己的相关信息，包括 name 和 email，这样才能把自己的代码推送到远程 git 仓库
+- 安装 git 后需要自报家门，设置自己的相关信息，包括 name 和 email，每一个 Git 的提交都会使用这些信息，并且它会写入到你的每一次提交中
 
 ```
 $ git config --global user.name "Your Name"
@@ -69,7 +70,7 @@ $ git config --global user.email "email@example.com"
 
 =============
 
-## Git 的状态、工作流以及文件的生命周期
+## Git 的状态、工作区域、工作流以及文件的生命周期
 
 #### git 有三种状态： 
 
@@ -80,6 +81,17 @@ $ git config --global user.email "email@example.com"
 - 已修改 `modified`: 已经修改，但是还没有保存到数据库，对本地文件修改
 
 - 已暂存 `staged`: 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中，在暂存区域，执行`git add file` 后就暂存了
+
+#### git 工作区域：
+
+Git 项目的三个工作区域的概念：
+- Git 仓库: Git 仓库目录是 Git 用来保存项目的元数据和对象数据库的地方。 这是 Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。
+
+- 工作目录: 工作目录是对项目的某个版本独立提取出来的内容。 这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。
+
+- 暂存区域: 暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在 Git 仓库目录中。 有时候也被称作`‘索引’`，不过一般说法还是叫暂存区域。
+
+![https://git-scm.com/book/en/v2/images/areas.png](https://git-scm.com/book/en/v2/images/areas.png)
 
 #### git 工作流：
 
@@ -509,6 +521,11 @@ git co / gco
 git br / gbr
 git ci 
 git st / gst
+```
+- 帮助
+```
+git help 
+git help name
 ```
 
 =============
