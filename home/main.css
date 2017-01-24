@@ -1,7 +1,10 @@
 .wrap {
-  width: 90%;
+  width: 40%;
   scroll: auto;
   background: green;
   color: blue;
   height: auto;
+}
+.home {
+  width: 29%;
 }
