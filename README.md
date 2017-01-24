@@ -241,6 +241,11 @@ git add home/index.html
 git commit -m 'update readme'
 ```
 
+可以将 `git add ` 和 `git commit`合并
+```
+git commit -a -m 'msg'
+```
+
 - 将暂存状态中的文件还原成修改状态的文件
 
 ```
