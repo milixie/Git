@@ -506,8 +506,9 @@ git push origin --tags (所有标签)
 
  
 
+#### 常用的 git 命令
 
-
+![http://7xj5et.com1.z0.glb.clouddn.com/git.jpeg](http://7xj5et.com1.z0.glb.clouddn.com/git.jpeg)
 
 
 
@@ -545,6 +546,8 @@ git help name
 ```
 
 =============
+
+
 
 ## Git多人协作时应该注意的问题：
 
