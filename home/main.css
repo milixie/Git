@@ -1,10 +1,15 @@
 .wrap {
   width: 100%;
+  margin: 20px 0;
   scroll: auto;
   background: green;
   color: blue;
   height: auto;
 }
 .home {
-  with: 24%;
+  height: auto;
+  scroll: auto;
+  with: 25%;
+  padding: 10px;
+  background: blue;
 }
