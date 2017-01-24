@@ -121,7 +121,7 @@ rm -rf .git
 
 ### 分支相关
 
-* git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作 *
+* git 强大的一个原因就是它有强大的分支管理，打个比方：使用 github 为 git 的远程仓库，开发一个网站，每个人都基于 product branch 生产环境的主分支去新建一个新的分支，在各自的分支上进行开发，突然线上有一个紧急 bug 需要修复，你可以切换到主分支上，再切出一个新分支进行 hotfix，修复完成测试成功后，可以将这个分支合并到主分支上，然后再切换到你的原来的那个分支上，可以 merge 一下主分支，然后继续工作
 
 - 创建并切换新分支
 
@@ -129,7 +129,7 @@ rm -rf .git
 git checkout -b mas-git-learn
 ```
 
-- 基于当前分支创建新分支
+- 基于当前分支创建新分支，不会切换到新的分支上
 
 ```
 git branch mas-new-branch
@@ -146,7 +146,7 @@ git branch
 ```
 git branch -r
 ```
-想要拉取远程分支的话
+比如说你刚 clone 了一个新的项目，本地只有 master 分支，想要拉取远程分支的话
 
 1.可以先查看远程分支，再直接`git checkout mas-git-learn`
 
@@ -225,13 +225,13 @@ git reset .
 git reset home/index.html
 ```
 
-- 将修改的文件回退到上一个版本
+- 将修改的文件（包括暂存区staged和modified 状态的文件）回退到上一个版本
 
 ```
 git reset --hard HARD
 ```
 
-- 将提交的文件回退到当前的版本
+- 将(本地所有修改的、暂存的、提交的文件)回退到当前的版本
 
 ```
 git reset --hard HARD^
@@ -297,6 +297,7 @@ git log
 git log --oneline (仅显示提交的 hash 和 message)
 git log --pretty=oneline (仅显示提交的 commit id 和 message)
 git log --oneline --decorate --graph --all (输出你的提交历史、各个分支的指向以及项目的分支分叉情况)
+git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit (更详细的提交历史，类似于 sourceTree)
 git log --author="milixie" (查看本作者提交记录)
 git log -p (显示所有提交的文件的具体修改)
 git log -p README.md (显示某个文件的所有修改)
